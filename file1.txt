@@ -1,0 +1,4 @@
+merubah file1.txt
+menambahkan baris 2 pada file1.txt
+baris 3
+baris 4

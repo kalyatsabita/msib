@@ -1,0 +1,1 @@
+menambahkan baris 1 pada file3.txt
