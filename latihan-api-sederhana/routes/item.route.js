@@ -8,13 +8,13 @@ let items = [
 ];
 
 router.post('/', (req, res) => {
-  const newItem = req.body;
-  items.push(newItem);
-  return res.status(201).json(newItem);
+  const newItem = req.body
+  items.push(newItem)
+  return res.status(201).json(newItem)
 });
 
 router.get('/', (req, res) => {
-  return res.status(200).json(items);
+  return res.status(200).json(items)
 });
 
 router.get('/:index', (req, res) => {
@@ -42,23 +42,23 @@ router.put('/:index', (req, res) => {
 });
 
 router.delete('/:index', (req, res) => {
-    const index = req.params.index;
+    const index = req.params.index
     if (index >= 0 && index < items.length) {
-      const deletedItem = items.splice(index, 1);
-      return res.status(200).json(deletedItem[0]);
+      const deletedItem = items.splice(index, 1)
+      return res.status(200).json(deletedItem[0])
     } else {
-      return res.status(404).json({ error: 'Item not found' });
+      return res.status(404).json({ error: 'Item not found' })
     }
   });
 
 router.post('/:index/kalkulasi', (req, res) => {
-  const index = req.params.index;
-  const jumlah = req.body.jumlah;
+  const index = req.params.index
+  const jumlah = req.body.jumlah
 
   if (index >= 0 && index < items.length) {
-    const item = items[index];
-    const total = item.harga * jumlah;
-    return res.status(200).json({ nama: item.nama, hargaSatuan: item.harga, satuan: item.satuan, jumlah: jumlah, total: total });
+    const item = items[index]
+    const total = item.harga * jumlah
+    return res.status(200).json({ nama: item.nama, hargaSatuan: item.harga, satuan: item.satuan, jumlah: jumlah, total: total })
   } else {
     return res.status(404).json({ error: 'Item not found' });
   }
