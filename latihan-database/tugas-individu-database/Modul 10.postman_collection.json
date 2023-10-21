@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "890f070e-0b0c-4ec8-85eb-d4a55f86ad4c",
+		"name": "Modul 10",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29384494"
+	},
+	"item": [
+		{
+			"name": "Device",
+			"item": [
+				{
+					"name": "Get List Device",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/device",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"device"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Detail Device",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/device/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"device",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Data Device",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Earphone\",\r\n    \"location\": \"Bali\",\r\n    \"type\": \"Wireless\",\r\n    \"sensor_spesification\": \"Mikrofon, Deteksi Sentuhan, Speaker\",\r\n    \"gps_location_latitude\": \"20.345678\",\r\n    \"gps_location_longitude\": \"80.765432\",\r\n    \"device_notification\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/device",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"device"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Data Device",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Earphone\",\r\n    \"location\": \"Jogja\",\r\n    \"type\": \"Wireless\",\r\n    \"sensor_spesification\": \"Mikrofon, Deteksi Sentuhan, Speaker\",\r\n    \"gps_location_latitude\": \"20.345678\",\r\n    \"gps_location_longitude\": \"80.765432\",\r\n    \"device_notification\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/device/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"device",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Data Device",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/device/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"device",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
