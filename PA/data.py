@@ -4,8 +4,8 @@ real_times = ["11:17:33", "11:18:20", "11:19:01", "11:21:21", "11:35:03", "11:45
 
 delays_pakan = []
 for rtc, real in zip(rtc_times, real_times):
-    rtc_seconds = time_to_seconds(rtc)
-    real_seconds = time_to_seconds(real)
+    rtc_seconds = time_to_seconds(rtc) # type: ignore
+    real_seconds = time_to_seconds(real) # type: ignore
     delay = real_seconds - rtc_seconds
     delays_pakan.append(delay)
 
@@ -17,7 +17,7 @@ mqtt_values_pakan = ["15 gram", "29 gram", "30 gram", "30 gram", "33 gram", "34 
 sensor_values_pakan = ["15 gram", "30 gram", "30 gram", "34 gram", "34 gram", "34 gram", "33 gram", "40 gram", "39 gram", "45 gram"]
 
 delays_mqtt_pakan = []
-for mqtt, sensor in zip(sensor_times_pakan, mqtt_values_pakan):
+for mqtt, sensor in zip(sensor_times_pakan, mqtt_values_pakan): # type: ignore
     delay = int(sensor.split()[0]) - int(mqtt.split()[0])
     delays_mqtt_pakan.append(delay)
 
